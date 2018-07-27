@@ -16,6 +16,13 @@ typeVariable namaVariable = require('directory')
 - Cara export module
 
 ```javascript
+var funcA = () => {
+    console.log('function A');
+}
+var funcB = () => {
+    console.log('function B');
+}
+/* export the modules.. */
 module.exports = {
     funcA,
     funcB

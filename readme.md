@@ -29,6 +29,16 @@ module.exports = {
 }
 ```
 
+- Handle the error using Try Catch
+```javascript
+try {
+    /* doing something */
+} catch (error) {
+    /* IF fails, catch will handle it! */
+}
+
+```
+
 - JSON
 `JSON.stringify` untuk merubah object jadi ke string type, kebalikanya adalah `JSON.parse` yaitu merubah string ke bentuk object
 

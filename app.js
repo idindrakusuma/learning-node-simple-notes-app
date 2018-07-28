@@ -22,7 +22,7 @@ if (command) {
     notes.remove();
   } else if (command === 'update') {
     notes.update();
-  } else if (command === 'create') {
+  } else if (command === 'add') {
     notes.add(argv.title, argv.body);
   } else {
     console.log('command not recognized!')

@@ -21,8 +21,9 @@ Daftar yang sudah dipelajari?
 - penggunaan API Node (fs, os)
 - penggunaan modul pihak ketiga (lodash, yargs)
 - penggunaan JSON
-- try-catch
+- try-catcn
 - arrow function
+- `filter()` ES6 function
 
 ## Penting di ingat
 - Cara import / require
@@ -57,6 +58,15 @@ try {
 }
 
 ```
+
+- Filter array using `.filter()`
+```javascript
+let names = ['indra', 'kusuma', 'jaya'];
+let filteredNames = names.filter((name) => name !=='indra');
+console.log(filteredNames)
+// ['kusuma','jaya']
+```
+See more at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 
 - JSON
 `JSON.stringify` untuk merubah object jadi ke string type, kebalikanya adalah `JSON.parse` yaitu merubah string ke bentuk object

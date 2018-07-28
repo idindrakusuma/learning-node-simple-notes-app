@@ -1,9 +1,23 @@
 # Dokumentasi Belajar Node JS
 
+## How to run this project?
+- clone to your local machine
+- enter the directory project
+- install modules using `npm install`
+- run project using `node app.js`
+
+## List Command
+- add new note
+  - `node app.js add --title="some title" --body="some description"`
+
+---
+
 Daftar yang sudah dipelajari?
 - penggunaan API Node (fs, os)
 - penggunaan modul pihak ketiga (lodash, yargs)
 - penggunaan JSON
+- try-catch
+- arrow function
 
 ## Penting di ingat
 - Cara import / require
@@ -29,7 +43,7 @@ module.exports = {
 }
 ```
 
-- Handle the error using Try Catch
+- Handle the error using `try-catch`
 ```javascript
 try {
     /* doing something */

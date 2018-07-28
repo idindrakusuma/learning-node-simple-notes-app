@@ -18,7 +18,6 @@ let saveNotes = (notes) => {
   /* try to save notes */
   try {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
-    console.log('successfully added new note!');
   } catch (err) {
     console.log('opps! something error with the message: '+ err);
   }
@@ -44,7 +43,13 @@ let add = (title, body) => {
 }
 
 let remove = (title) => {
-  console.log('Deleting file..', title)
+  /* fetch All notes */
+  let notes = fetchNotes();
+  /* filter notes without that title */
+  let filteredNotes = notes.filter((note) => note.title !== title);
+  /* save the notes */
+  saveNotes(filteredNotes);
+  return notes.length !== filteredNotes.length;
 }
 
 let update = (title) => {

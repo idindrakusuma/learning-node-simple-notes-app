@@ -7,9 +7,14 @@
 - run project using `node app.js`
 
 ## List Command
-- add new note
-  - `node app.js add --title="some title" --body="some description"`
-
+- `add` new note
+```javascript
+node app.js add --title="note title" --body="note description" 
+```
+- `remove` note
+```javascript
+node app.js remove --title="note title" 
+```
 ---
 
 Daftar yang sudah dipelajari?

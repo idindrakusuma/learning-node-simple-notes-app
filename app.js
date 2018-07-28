@@ -9,7 +9,6 @@ const notes = require('./notes')
 console.log('Starting app..')
 
 const argv = yargs.argv;
-console.log(argv);
 
 /* Get the command */
 let command = argv._[0];
@@ -23,7 +22,15 @@ if (command) {
   } else if (command === 'update') {
     notes.update();
   } else if (command === 'add') {
-    notes.add(argv.title, argv.body);
+    let note = notes.add(argv.title, argv.body);
+    console.log('---');
+    if(note) {
+      console.log(`Title: ${note.title}`);
+      console.log(`Body: ${note.body}`);
+    } else {
+      console.log("Can't add new note because title was taken!");
+    }
+    
   } else {
     console.log('command not recognized!')
   }

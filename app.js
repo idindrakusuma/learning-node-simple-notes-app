@@ -6,8 +6,43 @@ const yargs = require('yargs');
 /* load own module */
 const notes = require('./notes')
 
-/* Get the command */
-const argv = yargs.argv;
+/* body option of command */
+let titleOption = {
+  describe: 'Title of Note',
+  demand: true,
+  alias: 't'
+};
+
+let bodyOption = {
+  describe: 'Describe of Note',
+  demand: true,
+  alias: 'b'
+};
+
+/* Get the command using YARGS */
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOption,
+    body: bodyOption
+  })
+  .command('list', 'Showing your all notes')
+  .command('read', 'Read specific note', {
+    title: titleOption
+  })
+  .command('remove', 'remove the note', {
+    title: titleOption
+  })
+  .command('update', 'Update specific note!', {
+    title: titleOption,
+    newTitle: {
+      describe: 'New Title of Note',
+      demand: true,
+      alias: 'nT'
+    },
+    body: bodyOption
+  })
+  .help()
+  .argv;
 let command = argv._[0];
 
 /* Check the command! */
@@ -32,7 +67,14 @@ if (command) {
   } 
   
   else if (command === 'update') {
-    notes.update();
+    let note = notes.update(argv.title, argv.newTitle, argv.body);
+    /* is successfull updated? */
+    if(note) {
+      console.log('successfully updated new note!');
+      notes.printNote(note);
+    } else {
+      console.log("Can't update new note because title not found!");
+    }
   } 
   
   else if (command === 'add') {

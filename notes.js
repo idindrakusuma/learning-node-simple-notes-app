@@ -50,8 +50,18 @@ let remove = (title) => {
   return notes.length !== filteredNotes.length;
 }
 
-let update = (title) => {
-  console.log('Updating dile ', title)
+let update = (title, newTitle, body) => {
+  let notes = fetchNotes();
+  /* Find the note */
+  let isFindNote = notes.find((note) => note.title === title);
+  if(isFindNote === undefined) {
+    return false;
+  }
+  /* deleted the note */
+  remove(title);
+  /* update new note */
+  let response = add(newTitle, body);
+  return response;
 }
 
 let read = (title) => {

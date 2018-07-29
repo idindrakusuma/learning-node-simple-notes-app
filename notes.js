@@ -58,11 +58,31 @@ let update = (title) => {
 
 let read = (title) => {
   console.log('Reading file ', title);
+  let notes = fetchNotes();
+  /* search the note! */
+  let note = notes.find((note) => note.title === title);
+  /* is Avaliable? */
+  if(note === undefined) {
+    return false;
+  } 
+  return note;
+}
+
+let getNotes = () => {
+  console.log("list of notes");
+}
+
+let printNote = (note) => {
+  console.log("---")
+  console.log(`Title: ${note.title}`);
+  console.log(`Body: ${note.body}`);
 }
 
 module.exports = {
   add,
   remove,
   update,
-  read
+  read,
+  getNotes,
+  printNote
 }

@@ -15,6 +15,10 @@ node app.js add --title="note title" --body="note description"
 ```javascript
 node app.js remove --title="note title" 
 ```
+- `read` specific note
+```javascript
+node app.js read --title="note title" 
+```
 ---
 
 Daftar yang sudah dipelajari?
@@ -59,14 +63,19 @@ try {
 
 ```
 
-- Filter array using `.filter()`
+- Filter array using `.filter()` and `find()`
 ```javascript
 let names = ['indra', 'kusuma', 'jaya'];
 let filteredNames = names.filter((name) => name !=='indra');
+let findName = names.find((name) => name === 'indra');
+
 console.log(filteredNames)
 // ['kusuma','jaya']
+console.log(findName)
+// indra
 ```
-See more at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+Filter Documentation at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+Find documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
 
 - JSON
 `JSON.stringify` untuk merubah object jadi ke string type, kebalikanya adalah `JSON.parse` yaitu merubah string ke bentuk object

@@ -15,7 +15,13 @@ if (command) {
   console.log('Command: ' + command);
   /* check the command */
   if (command === 'read') {
-    notes.read(argv.title);
+    let note = notes.read(argv.title);
+    if(note) {
+      console.log("Showing your note!");
+      notes.printNote(note);
+    } else {
+      console.log("Note not found!");
+    }
   } else if (command === 'remove') {
     let removeNote = notes.remove(argv.title);
     /* is note successfuly deleted? */
@@ -25,15 +31,15 @@ if (command) {
     notes.update();
   } else if (command === 'add') {
     let note = notes.add(argv.title, argv.body);
-    console.log('---');
     /* is Note successfuly added? */
     if(note) {
       console.log('successfully added new note!');
-      console.log(`Title: ${note.title}`);
-      console.log(`Body: ${note.body}`);
+      notes.printNote(note);
     } else {
       console.log("Can't add new note because title was taken!");
     }
+  } else if(command === "list" ) {
+    notes.getNotes();
   } else {
     console.log('command not recognized!')
   }

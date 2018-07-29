@@ -19,6 +19,10 @@ node app.js remove --title="note title"
 ```javascript
 node app.js read --title="note title" 
 ```
+- showing `list` all note
+```javascript
+node app.js list 
+```
 ---
 
 Daftar yang sudah dipelajari?

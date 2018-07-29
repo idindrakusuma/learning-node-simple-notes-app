@@ -3,8 +3,6 @@ const _ = require('lodash');
 const fs = require('fs');
 const yargs = require('yargs');
 
-console.log('Starting app..')
-
 /* load own module */
 const notes = require('./notes')
 

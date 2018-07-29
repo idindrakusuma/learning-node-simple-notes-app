@@ -1,5 +1,3 @@
-console.log("Starting notes.js..");
-
 /* requiere Node API */
 const fs = require('fs');
 
@@ -68,7 +66,12 @@ let read = (title) => {
 }
 
 let getNotes = () => {
-  console.log("list of notes");
+  let notes = fetchNotes();
+  if(notes.length === 0) {
+    return console.log("You haven't Notes!");
+  }
+  console.log(`You have ${notes.length} note(s)`);
+  notes.forEach((note) => printNote(note));
 }
 
 let printNote = (note) => {

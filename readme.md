@@ -23,6 +23,15 @@ node app.js read --title="note title"
 ```javascript
 node app.js list 
 ```
+- Updated Note
+```javascript
+node app.js update --title='title note' --newTitle='new title note' --body='new body note'
+```
+
+- Showing all function
+```
+node app.js --help
+```
 ---
 
 Daftar yang sudah dipelajari?

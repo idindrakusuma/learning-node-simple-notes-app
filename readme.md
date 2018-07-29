@@ -74,8 +74,18 @@ console.log(filteredNames)
 console.log(findName)
 // indra
 ```
-Filter Documentation at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
-Find documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+- Filter Documentation at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+- Find documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+
+- ChromeDev Tools, open via console
+``` javascript
+node --inspect-brk file-location.js
+/* STEP selanjutnya 
+- Open Chrome
+- Open link 'chome://inspect'
+- Then open devTools -> Open Dedicated DevTools for Node
+*/ 
+```
 
 - JSON
 `JSON.stringify` untuk merubah object jadi ke string type, kebalikanya adalah `JSON.parse` yaitu merubah string ke bentuk object

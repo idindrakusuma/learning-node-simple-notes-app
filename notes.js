@@ -57,7 +57,6 @@ let update = (title) => {
 }
 
 let read = (title) => {
-  console.log('Reading file ', title);
   let notes = fetchNotes();
   /* search the note! */
   let note = notes.find((note) => note.title === title);
